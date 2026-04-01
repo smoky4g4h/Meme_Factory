@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(17, 37, 56);
+    font-family: Arial, sans-serif;
+}
+#headd{
+    margin-top: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 93, 142);
+    color: white;
+    height: 50px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#headd h1{
+    font-size: 24px;
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+.link1,.link2,.link3,.link4{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+.link1:hover,.link2:hover,.link3:hover,.link4:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 10s linear infinite;
+}
+#marquee-item{
+    margin : 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(42, 95, 145);
+}
+.marquee{
+    background-color: rgb(42, 95, 145);
+    margin : 3px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #headd {
+        height: auto;
+        padding: 10px 3px;
+        justify-content: flex-start;
+        position: relative;
+    }
+    
+    #headd h1 {
+        font-size: 18px;
+        flex: 0 1 auto;
+        min-width: auto;
+        margin-right: auto;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgb(40, 93, 142);
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        gap: 0;
+        margin-top: 20px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .link1, .link2, .link3, .link4 {
+        font-size: 16px;
+        padding: 12px 20px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .link1:hover, .link2:hover, .link3:hover, .link4:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #headd h1 {
+        font-size: 16px;
+    }
+    
+    .link1, .link2, .link3, .link4 {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .marquee span {
+        font-size: 14px;
+    }
+}
+#meme-loade{
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(42, 95, 145);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3%;
+}
+#meme{
+    display: flex;
+    justify-content: center;
+}
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 15px;
+    margin-top: 15px;
+}
+#cards img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card-title{
+    text-align: center;
+    font-size: 23px;
+    color:aliceblue;
+    margin-top: 5px;
+    max-width: 300px;
+    overflow: hidden;
+}
+.card-img{
+    object-fit: cover;  
+}
+.card-img:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
