@@ -17,6 +17,7 @@ fetch(url)
     console.log(data);
     arr = data.memes.map(x => x.title.toLowerCase());
     let count2 = 0;
+    let ccccc = data.memes.length;
     function createCard() {
         if (!data || !data.memes) {
             console.error("Data structure is not as expected:", data);
@@ -29,30 +30,32 @@ fetch(url)
         img.setAttribute("class", "card-img");
         let title = document.createElement("h3");
         title.setAttribute("class", "card-title");
-        
-        // Accessing the memes array directly
         title.innerText = data.memes[count2].title;
         img.src = data.memes[count2].url;
         card.appendChild(img);
         card.appendChild(title);
         document.getElementById("cards").appendChild(card);
         count2++;
+        ccccc++;
     }
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
-    createCard();
+    while (ccccc--){
+
+        createCard();
+    }
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
+    // createCard();
     console.log(arr)
 });

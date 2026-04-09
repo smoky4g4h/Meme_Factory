@@ -3,45 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meme Factory - Home</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div class="maincontainer">
-        <div id="headd">
-            <h1>MEME FACTORY</h1>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links">
-                <a class="link1" href="./index2.html">Trending Meme</a>
-                <a class="link2" href="">Templates</a>
-                <a class="link3" href="">Create meme</a>
-                <a class="link4" href="">leaderboard</a>
-            </div>
+    <div id="headd">
+        <h1>MEME FACTORY</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="marquee">
-            <span id="marquee-item">We fetch the funniest jokes from the internet so you don’t have to scroll endlessly.</span>
-        </div>
-        <div id="content" style="margin-top: 5px; font-size: 15px; background-color: rgb(55, 102, 195);">
-            <h1>THE INTERNET'S MEME LAB</h1>
-            <h2 style="font-size: 70px; margin: 10px; color: rgb(166, 195, 216);">MAKE THE INTERNET LAUGH</h2>
-            <div>
-                <span style="margin-left: 5px; font-size: 25px; color: rgb(140, 185, 239);">Create, Remix, Share memes with the</span><br>
-                <span style="margin-left: 5px; font-size: 25px; color: rgb(140, 185, 239);">world's largest collection of meme templates.</span><br><br>
-            </div>
-            <p style="font-size: 25px; color: rgb(140, 185, 239);">Browse our collection of meme templates and create your own!</p>
-
-        </div>
-        <div id="cards">
-
-        </div>
-        <div id="meme">
-            <button onclick=creatememe() id="meme-loade">Load Memes</button>
+        <div class="nav-links">
+            <a href="./index2.html">Trending</a>
+            <a href="#">Templates</a>
+            <a href="#">Create</a>
+            <a href="#">Leaderboard</a>
         </div>
     </div>
+    
+    <div class="marquee">
+        <span id="marquee-item">We fetch the funniest jokes from the internet so you don't have to scroll endlessly. 🔥 New templates added daily. ✨ Create and share with millions.</span>
+    </div>
+
+    <div id="content" class="hero">
+        <h1>The Internet's Meme Lab</h1>
+        <h2>MAKE THE INTERNET LAUGH</h2>
+        <div class="hero-desc">
+            <span>Create, Remix, and Share memes with the</span><br>
+            <span>world's largest collection of meme templates.</span>
+            <p>Browse our collection below and unleash your creativity!</p>
+        </div>
+    </div>
+
+    <div id="cards" class="cards-grid">
+        <!-- Cards will be injected here by index.js -->
+    </div>
+
+    <div class="load-btn-container" id="meme">
+        <button onclick="creatememe()" id="meme-loade">Load More Memes ✨</button>
+    </div>
+
     <script src="./index.js"></script>
 </body>
 </html>
