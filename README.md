@@ -79,3 +79,5 @@ This project uses the **Imgflip Public API**.
 ---
 
 <p align="center">Made with 😂 and too much free time</p>
+
+Thanks
