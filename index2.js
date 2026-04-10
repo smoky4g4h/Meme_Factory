@@ -59,3 +59,37 @@ fetch(url)
     // createCard();
     console.log(arr)
 });
+
+window.toggleMenu = function() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
+
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const titleElement = card.querySelector('.card-title');
+                if (titleElement) {
+                    const title = titleElement.innerText.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    }
+});

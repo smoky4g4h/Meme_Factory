@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap');
 
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +20,8 @@ body {
         radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
     background-attachment: fixed;
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease, background-image 0.4s ease;
 }
-
 h1, h2, h3, h4 {
     font-family: 'Outfit', sans-serif;
 }
@@ -34,10 +38,11 @@ h1, h2, h3, h4 {
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
 }
 
 #headd h1 {
-    font-size: 28px;
+    font-size: clamp(20px, 5vw, 28px);
     font-weight: 800;
     background: linear-gradient(135deg, #fff, #a5b4fc);
     -webkit-background-clip: text;
@@ -63,11 +68,28 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a:hover {
-    color: #fff;
+    color: #f8fafc;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 .hamburger {
     display: none;
@@ -82,7 +104,7 @@ h1, h2, h3, h4 {
     height: 3px;
     background-color: #f8fafc;
     border-radius: 3px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 .marquee {
     width: 100%;
@@ -131,6 +153,7 @@ h1, h2, h3, h4 {
     margin-bottom: 25px;
     background: linear-gradient(to right, #60a5fa, #c084fc);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -148,7 +171,7 @@ h1, h2, h3, h4 {
 }
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 25px;
     padding: 40px 5%;
     max-width: 1400px;
@@ -172,7 +195,7 @@ h1, h2, h3, h4 {
 .card:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 25px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3), 0 0 25px rgba(139, 92, 246, 0.3);
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -194,17 +217,19 @@ h1, h2, h3, h4 {
     width: 100%;
     padding: 30px 20px 20px;
     font-size: 18px;
-    color: #fff;
+    color: #f8fafc;
     background: rgba(15, 23, 42, 0.5);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateY(0);
     transition: transform 0.3s ease;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Buttons */
 .load-btn-container {
     text-align: center;
     padding: 20px 0 60px;
@@ -215,7 +240,7 @@ h1, h2, h3, h4 {
     font-size: 18px;
     font-weight: 600;
     font-family: 'Outfit', sans-serif;
-    color: white;
+    color: #f8fafc;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -253,13 +278,13 @@ h1, h2, h3, h4 {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    color: white;
+    color: #f8fafc;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     outline: none;
     transition: all 0.3s;
     width: 250px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 #search-input::placeholder {
@@ -279,6 +304,7 @@ h1, h2, h3, h4 {
 
     .hamburger {
         display: flex;
+        order: 2;
     }
 
     .nav-links {
@@ -287,7 +313,7 @@ h1, h2, h3, h4 {
         flex-direction: column;
         padding: 20px 0;
         gap: 10px;
-        order: 3;
+        order: 4;
     }
 
     .nav-links.active {
@@ -308,13 +334,13 @@ h1, h2, h3, h4 {
     }
     
     .search-container {
-        order: 2;
-        margin-left: auto;
-        margin-right: 20px;
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
     }
     
     #search-input {
-        width: 160px;
+        width: 100%;
     }
 
     .hero h2 {
